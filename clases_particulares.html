@@ -9,35 +9,46 @@
             background: linear-gradient(to bottom, white, black);
             font-family: 'Arial', sans-serif;
             color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
         }
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
         }
         .options {
             margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
         }
         .button {
             padding: 20px;
-            margin: 10px;
             font-size: 20px;
             background-color: rgba(0, 0, 0, 0.7);
             border: none;
             cursor: pointer;
             color: white;
-            width: 200px;
+            width: 100%;
+            max-width: 300px;
+            align-self: center;
         }
         .button:hover {
             background-color: rgba(255, 255, 255, 0.3);
         }
         .name {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
+            margin-top: 20px;
             font-size: 16px;
             color: rgba(255, 255, 255, 0.7);
         }
@@ -48,6 +59,7 @@
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             border-radius: 10px;
+            width: 100%;
         }
         .form-container input, .form-container textarea {
             width: 100%;
@@ -64,12 +76,22 @@
             color: black;
             border: none;
             cursor: pointer;
+            width: 100%;
+        }
+        h1, h2, p {
+            color: black;
+        }
+        @media (min-width: 600px) {
+            .options {
+                flex-direction: row;
+                gap: 40px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 style="color: black;">¿De qué quieres que te dé clase?</h1>
+        <h1>¿De qué quieres que te dé clase?</h1>
         <div class="options">
             <button class="button" onclick="showExperience('math')">MATEMÁTICAS</button>
             <button class="button" onclick="showExperience('english')">INGLÉS</button>
